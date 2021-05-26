@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.arotec.mapper.Rws_ds2Mapper">
+ 
+
+    <select id="selectRwsds2" resultType="rws_ds2vo">
+        <![CDATA[
+        SELECT 
+		FLOWMTR_ID
+		,NAME
+		,INST_DATE
+		,FMETE_FORM
+		,FMETE_TYPE
+		,WTRSYS
+		,AUTO_TYPE
+		,PIPE_DIA
+		,PIPE_ID
+		,IN_AREA
+		,OUT_AREA
+		,ADDR
+		,REMARK
+		,SBLOCK_ID
+		,OFFICE_ID
+		,STD_WHMR_V
+		,FAC_NAME
+		,DATA_TYPE
+		,OUT_ZONE
+		,FLSY_NAME
+		,GIS_CODE
+		,TSMTR_DATE
+		,OFFICE
+		,J_BLOCK
+		,S_BLOCK
+		,STD_WHMR 
+		,REP_CHK
+		,CMC_ERR_VALUE
+
+		FROM sbn_flowmtr_test
+		]]>
+    </select>
+    <select id="getAllSelect" resultType="rws_ds2vo">
+    select *
+    from sbn_flowmtr_test
+    </select>
+    
+
+    
+     <update id="setData"  parameterType="HashMap">
+      UPDATE sbn_flowmtr_test
+    
+    
+       <set>
+        <if test="NAME != null">
+      	NAME = #{NAME},
+      	</if>
+      	<if test="INST_DATE != null">
+		INST_DATE = #{INST_DATE},
+		</if>
+		<if test="FMETE_FORM != null">
+		FMETE_FORM = #{FMETE_FORM},
+		</if>
+		<if test="FMETE_TYPE != null">
+		FMETE_TYPE = #{FMETE_TYPE},
+		</if>
+			<if test="WTRSYS != null">
+		WTRSYS = #{WTRSYS},
+		</if>
+		<if test="AUTO_TYPE != null">
+		AUTO_TYPE = #{AUTO_TYPE},
+		</if>
+		<if test="PIPE_DIA != null">
+		PIPE_DIA = #{PIPE_DIA},
+		</if>
+		<if test="PIPE_ID != null">
+		PIPE_ID = #{PIPE_ID},
+		</if>
+		<if test="IN_AREA != null">
+		IN_AREA = #{IN_AREA},
+		</if>
+		<if test="OUT_AREA != null">
+		OUT_AREA = #{OUT_AREA},
+		</if>
+		<if test="ADDR != null">
+		ADDR = #{ADDR},
+		</if>
+		<if test="REMARK != null">
+		REMARK = #{REMARK},
+		</if>
+		<if test="SBLOCK_ID != null">
+		SBLOCK_ID = #{SBLOCK_ID},
+		</if>
+		<if test="OFFICE_ID != null">
+		OFFICE_ID = #{OFFICE_ID},
+		</if>
+		<if test="STD_WHMR_V != null">
+		STD_WHMR_V = #{STD_WHMR_V},
+		</if>
+		<if test="FAC_NAME != null">
+		FAC_NAME = #{FAC_NAME},
+		</if>
+		<if test="DATA_TYPE != null">
+		DATA_TYPE = #{DATA_TYPE},
+		</if>
+		<if test="OUT_ZONE != null">
+		OUT_ZONE = #{OUT_ZONE},
+		</if>
+		<if test="FLSY_NAME != null">
+		FLSY_NAME = #{FLSY_NAME},
+		</if>
+		<if test="GIS_CODE != null">
+		GIS_CODE = #{GIS_CODE},
+		</if>
+		<if test="TSMTR_DATE != null">
+		TSMTR_DATE = #{TSMTR_DATE},
+		</if>
+		<if test="OFFICE != null">
+		OFFICE = #{OFFICE},
+		</if>
+		<if test="J_BLOCK != null">
+		J_BLOCK = #{J_BLOCK},
+		</if>
+		<if test="S_BLOCK != null">
+		S_BLOCK = #{S_BLOCK},
+		</if>
+		<if test="STD_WHMR != null">
+		STD_WHMR  = #{STD_WHMR},
+		</if>
+		<!-- ,REP_CHK = #{REP_CHK} -->
+		<if test="CMC_ERR_VALUE != null">
+		CMC_ERR_VALUE = #{CMC_ERR_VALUE},
+		</if>
+	</set>
+	
+	where FLOWMTR_ID = #{FLOWMTR_ID}
+	 
+   </update>
+
+    
+</mapper>
+
